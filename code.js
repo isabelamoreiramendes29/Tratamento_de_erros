@@ -29,17 +29,18 @@ function clickButton(){
     function clickNumberButton(){
 
         number = document.getElementById("inputnumber").value
+        document.getElementById("outputnumber").innerHTML = " "
 
         try{
             if (number == '') throw 'Informe um valor'
-
-            else if ( (number<5) || (number>10) ) throw 'Informe um valor maior que 5 e menor que 10' 
+            number = Number(number)
+            if ( (number<=5) || (number>=10) ) throw 'Informe um valor maior que 5 e menor que 10' 
         }
 
         catch(erro){
 
            document.getElementById("outputnumber").innerHTML = erro
-           if (erro == 'Informe um valor maior que 5 e menor que 10' || erro == 'Informe um valor')  throw 'Erro + erro javascript'
+           console.log("Erro " + erro)
 
             }
 
